@@ -2,7 +2,9 @@
 a custom xml module for views data ouput
 
 structure of the xml output for google news from views
-
+<loc>
+http://hhs.dev.local/latinos-and-affordable-care-act.html
+</loc>
 <news:news>
 <news:publication>
 <news:name >Department</news:name>
