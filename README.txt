@@ -12,7 +12,6 @@ structure of the xml output for google news from views
 <news:genres>PressRelease, Blog</news:genres>
 <news:publication_date>date</news:publication_date>
  
-
 <news:title>title</news:title>
 <news:keywords>health, people</news:keywords>
 </news:news>
