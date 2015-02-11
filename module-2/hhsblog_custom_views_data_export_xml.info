@@ -1,0 +1,6 @@
+name = Blog Custom Views Data Export XML
+description = Change format of XML export from Views Data Export module.
+package = HHS Modules
+core = 7.x
+version = "7.x-1.0"
+core = "7.x"
