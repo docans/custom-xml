@@ -1,0 +1,11 @@
+<?php
+function hhsblog_custom_views_data_export_xml_theme($existing, $type, $theme, $path) {
+  return array (
+    'views_data_export_xml_body__blog_home__views_data_export_1' => array (
+      'variables' => array('view' => NULL, 'options' => NULL, 'rows' => NULL, 'title' => NULL),
+      'template' => 'views-data-export-xml-body--blog-home--views-data-export-1' ,
+      'base hook' => 'views_data_export_xml_body',
+      'path' => drupal_get_path('module', 'custom_views_data_export_xml'),
+    ),
+  ); 
+}
