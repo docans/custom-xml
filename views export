@@ -1,0 +1,229 @@
+$view = new view();
+$view->name = 'blog_home';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'Blog home';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+ 
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'Selected HHS Blog Posts';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '10';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['pager']['options']['id'] = '0';
+$handler->display->display_options['pager']['options']['quantity'] = '10';
+$handler->display->display_options['pager']['options']['tags']['first'] = '« First';
+$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ Previous';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'Next ›';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'Last »';
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['row_plugin'] = 'ds';
+$handler->display->display_options['row_options']['load_comments'] = 0;
+$handler->display->display_options['row_options']['alternating'] = 0;
+$handler->display->display_options['row_options']['grouping'] = 0;
+$handler->display->display_options['row_options']['advanced'] = 0;
+$handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+$handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+$handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Sort criterion: Content: Date Posted (field_post_date) */
+$handler->display->display_options['sorts']['field_post_date_value']['id'] = 'field_post_date_value';
+$handler->display->display_options['sorts']['field_post_date_value']['table'] = 'field_data_field_post_date';
+$handler->display->display_options['sorts']['field_post_date_value']['field'] = 'field_post_date_value';
+$handler->display->display_options['sorts']['field_post_date_value']['order'] = 'DESC';
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = '1';
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'external_blog_post' => 'external_blog_post',
+  'internal_blog_post' => 'internal_blog_post',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Content: Date Posted (field_post_date) */
+$handler->display->display_options['filters']['field_post_date_value']['id'] = 'field_post_date_value';
+$handler->display->display_options['filters']['field_post_date_value']['table'] = 'field_data_field_post_date';
+$handler->display->display_options['filters']['field_post_date_value']['field'] = 'field_post_date_value';
+$handler->display->display_options['filters']['field_post_date_value']['operator'] = '<=';
+$handler->display->display_options['filters']['field_post_date_value']['default_date'] = 'now';
+$handler->display->display_options['filters']['field_post_date_value']['year_range'] = '-3:+0';
+ 
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['style_options']['row_class'] = 'blog-post';
+$handler->display->display_options['style_options']['uses_fields'] = TRUE;
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'ds';
+$handler->display->display_options['row_options']['load_comments'] = 0;
+$handler->display->display_options['row_options']['alternating'] = 0;
+$handler->display->display_options['row_options']['grouping'] = 0;
+$handler->display->display_options['row_options']['advanced'] = 0;
+$handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+$handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+$handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_type'] = 'h2';
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Field: Content: Date Posted */
+$handler->display->display_options['fields']['field_post_date']['id'] = 'field_post_date';
+$handler->display->display_options['fields']['field_post_date']['table'] = 'field_data_field_post_date';
+$handler->display->display_options['fields']['field_post_date']['field'] = 'field_post_date';
+$handler->display->display_options['fields']['field_post_date']['label'] = '';
+$handler->display->display_options['fields']['field_post_date']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_post_date']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Field: Content: Image */
+$handler->display->display_options['fields']['field_blog_post_image']['id'] = 'field_blog_post_image';
+$handler->display->display_options['fields']['field_blog_post_image']['table'] = 'field_data_field_blog_post_image';
+$handler->display->display_options['fields']['field_blog_post_image']['field'] = 'field_blog_post_image';
+$handler->display->display_options['fields']['field_blog_post_image']['label'] = '';
+$handler->display->display_options['fields']['field_blog_post_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_blog_post_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_blog_post_image']['settings'] = array(
+  'image_style' => '',
+  'image_link' => 'content',
+);
+$handler->display->display_options['fields']['field_blog_post_image']['delta_limit'] = 'all';
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '600',
+);
+/* Field: Content: Categories */
+$handler->display->display_options['fields']['field_categorized']['id'] = 'field_categorized';
+$handler->display->display_options['fields']['field_categorized']['table'] = 'field_data_field_categorized';
+$handler->display->display_options['fields']['field_categorized']['field'] = 'field_categorized';
+$handler->display->display_options['fields']['field_categorized']['label'] = 'Posted in';
+$handler->display->display_options['fields']['field_categorized']['delta_limit'] = 'all';
+/* Field: Content: Tags */
+$handler->display->display_options['fields']['field_tagged']['id'] = 'field_tagged';
+$handler->display->display_options['fields']['field_tagged']['table'] = 'field_data_field_tagged';
+$handler->display->display_options['fields']['field_tagged']['field'] = 'field_tagged';
+$handler->display->display_options['fields']['field_tagged']['label'] = 'Tagged';
+$handler->display->display_options['fields']['field_tagged']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_tagged']['separator'] = ' | ';
+$handler->display->display_options['metatags'] = array(
+  'title' => array(
+    'value' => '[view:title] page [current-page:page-number] | [site:name]',
+  ),
+);
+$handler->display->display_options['path'] = 'index.html';
+ 
+/* Display: Feed */
+$handler = $view->new_display('feed', 'Feed', 'feed_1');
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['style_plugin'] = 'rss';
+$handler->display->display_options['row_plugin'] = 'node_rss';
+$handler->display->display_options['row_options']['item_length'] = 'rss';
+$handler->display->display_options['path'] = 'rss.xml';
+ 
+/* Display: Data export */
+$handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['style_plugin'] = 'views_data_export_xml';
+$handler->display->display_options['style_options']['provide_file'] = 0;
+$handler->display->display_options['style_options']['parent_sort'] = 0;
+$handler->display->display_options['style_options']['transform'] = 1;
+$handler->display->display_options['style_options']['root_node'] = 'urlset';
+$handler->display->display_options['style_options']['item_node'] = 'url';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = 'title';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Field: Content: Path */
+$handler->display->display_options['fields']['path']['id'] = 'path';
+$handler->display->display_options['fields']['path']['table'] = 'node';
+$handler->display->display_options['fields']['path']['field'] = 'path';
+$handler->display->display_options['fields']['path']['label'] = 'loc';
+$handler->display->display_options['fields']['path']['exclude'] = TRUE;
+$handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+/* Field: Content: Date Created */
+$handler->display->display_options['fields']['field_create_date']['id'] = 'field_create_date';
+$handler->display->display_options['fields']['field_create_date']['table'] = 'field_data_field_create_date';
+$handler->display->display_options['fields']['field_create_date']['field'] = 'field_create_date';
+$handler->display->display_options['fields']['field_create_date']['label'] = 'news:publication_date';
+$handler->display->display_options['fields']['field_create_date']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_create_date']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_create_date']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Field: Global: PHP */
+$handler->display->display_options['fields']['php']['id'] = 'php';
+$handler->display->display_options['fields']['php']['table'] = 'views';
+$handler->display->display_options['fields']['php']['field'] = 'php';
+$handler->display->display_options['fields']['php']['label'] = 'news:news';
+$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+$handler->display->display_options['fields']['php']['php_output'] = '<?php
+$title = $row->title;
+$formatted_date = format_date($row->created, \'custom\', \'Y-m-d\');
+ 
+ 
+echo
+ 
+\' <news:publication>\';
+echo \' <news:name >\',\'The U.S. Department of Health and Human Services\',\'</news:name>\';
+echo \'<news:language>\',\'en\',\'</news:language>\';
+echo \'</news:publication>\';
+echo \'<news:genres>\',\'PressRelease, Blog\',\'</news:genres>\';
+echo \'<news:publication_date>\',format_date(time(), \'custom\', \'Y-m-d\'),\'</news:publication_date>\';
+ 
+$string = \'<![CDATA [\'.$title.\']]>\';
+echo \'<news:title>\',$title,\'</news:title>\';
+echo \'<news:keywords>\',\'health, nation, government\',\'</news:keywords>\';
+?>';
+$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+$handler->display->display_options['path'] = 'googlenews.xml';
